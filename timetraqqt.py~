@@ -65,7 +65,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         		gr = self.timebars.itemAt(i)
         		self.addTime(self.userTime.value(), self.units.currentIndex(), gr)
         else:
-            self.addTime(-self.userTime.value(), self.units.currentIndex())
+        	for i in range(rows):
+        		gr = self.timebars.itemAt(i)
+        		self.addTime(-self.userTime.value(), self.units.currentIndex(), gr)
 
     def addRow(self):
         global rows
